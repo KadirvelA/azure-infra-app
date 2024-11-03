@@ -16,7 +16,6 @@ provider "azurerm" {
   features {}
 }
 
-# Use existing resource group
 # Define the Linux App Service Plan
 resource "azurerm_service_plan" "app_service_plan" {
   name                = var.app_service_plan_name
