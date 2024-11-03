@@ -3,26 +3,35 @@ variable "resource_group_name" {
   type        = string
 }
 
-variable "location" {
-  description = "The location/region of the resource group"
-  type        = string
-  default     = "westeurope"
+
+variable "environments" {
+  description = "Map of configurations for each environment"
+  type = map(object({
+    app_service_plan_name = string
+    web_app_name          = string
+    environment           = string
+    location              = string
+  }))
+  default = {
+    dev = {
+      app_service_plan_name = "demo-test-splan-dev"
+      web_app_name          = "demo-test-webapp-dev"
+      environment           = "dev"
+      location              = "East US 2"
+    },
+    qa = {
+      app_service_plan_name = "demo-test-splan-qa"
+      web_app_name          = "demo-test-webapp-qa"
+      environment           = "qa"
+      location              = "East US 2"
+    },
+    prod = {
+      app_service_plan_name = "demo-test-splan-prod"
+      web_app_name          = "demo-test-webapp-prod"
+      environment           = "prod"
+      location              = "East US 2"
+    }
+  }
 }
 
-variable "app_service_plan_name" {
-  description = "The name of the App Service Plan"
-  type        = string
-  default     = "demo-abp-web-app-plan"
-}
 
-variable "web_app_name" {
-  description = "The name of the Web App"
-  type        = string
-  default     = "demo-abp-web-app"
-}
-
-
-variable "environment" {
-  type        = string
-  description = "The environment name (e.g., dev, prod) to dynamically adjust naming and tags."
-}
