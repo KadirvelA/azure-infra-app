@@ -7,16 +7,18 @@ terraform {
     }
   }
   required_version = ">= 0.14.9"
+    backend "local" {
+    path = "./terraform.tfstate-qa" 
+    }
 }
 
 provider "azurerm" {
   features {}
 }
 
-# Use existing resource group
 # Define the Linux App Service Plan
 resource "azurerm_service_plan" "app_service_plan" {
-  name                = var.app_service_plan_name
+  name                = "${var.app_service_plan_name}-${var.environment}-plan"
   location            = var.location
   resource_group_name = var.resource_group_name
   os_type             = "Linux"

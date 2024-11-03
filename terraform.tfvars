@@ -1,5 +1,5 @@
 resource_group_name = "gitops"
 location            = "East US 2"                 
-app_service_plan_name   = "demo-gitops"
 web_app_name            = "demo-qa-web-app"
-environment             = "dev"
+app_service_plan_name   = "demo-qa-app-service"
+environment             = "qa"

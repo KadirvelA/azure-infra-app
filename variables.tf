@@ -21,6 +21,7 @@ variable "web_app_name" {
   default     = "demo-abp-web-app"
 }
 
+
 variable "environment" {
   type        = string
   description = "The environment name (e.g., dev, prod) to dynamically adjust naming and tags."
