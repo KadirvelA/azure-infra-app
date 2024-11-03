@@ -7,6 +7,9 @@ terraform {
     }
   }
   required_version = ">= 0.14.9"
+   backend "local" {
+    path = "./terraform.tfstate-qa" 
+    }
 }
 
 provider "azurerm" {
