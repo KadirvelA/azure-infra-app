@@ -16,21 +16,21 @@ variable "environments" {
   default = {
     dev = {
       app_service_plan_name = "demo-gitops-splan-dev"
-      web_app_name          = "demo-test-webapp-dev"
+      web_app_name          = "demo-gitops-webapp-dev"
       environment           = "dev"
       location              = "East US 2"
       tags                  = { environment = "dev" }
     },
     qa = {
       app_service_plan_name = "demo-gitops-splan-qa"
-      web_app_name          = "demo-test-webapp-qa"
+      web_app_name          = "demo-gitops-webapp-qa"
       environment           = "qa"
       location              = "East US 2"
       tags                  = { environment = "dev" }
     },
     prod = {
       app_service_plan_name = "demo-gitops-splan-prod"
-      web_app_name          = "demo-test-webapp-prod"
+      web_app_name          = "demo-gitops-webapp-prod"
       environment           = "prod"
       location              = "East US 2"
       tags                  = { environment = "dev" }
